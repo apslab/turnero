@@ -11,4 +11,6 @@
  *= require_self
  *= require_tree .
 */
-=require_self
+{
+background-color:#00ff00;
+}
