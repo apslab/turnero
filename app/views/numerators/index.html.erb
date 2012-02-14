@@ -1,0 +1,29 @@
+<h1>Listing numerators</h1>
+
+<table>
+  <tr>
+    <th>Init</th>
+    <th>Current</th>
+    <th>Color</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @numerators.each do |numerator| %>
+  <tr>
+    <td><%= numerator.init %></td>
+    <td><%= numerator.current %></td>
+    <td><%= numerator.color %></td>
+    <td><%= numerator.name %></td>
+    <td><%= link_to 'Show', numerator %></td>
+    <td><%= link_to 'Edit', edit_numerator_path(numerator) %></td>
+    <td><%= link_to 'Destroy', numerator, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Numerator', new_numerator_path %>

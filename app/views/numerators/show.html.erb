@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Init:</b>
+  <%= @numerator.init %>
+</p>
+
+<p>
+  <b>Current:</b>
+  <%= @numerator.current %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @numerator.color %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @numerator.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_numerator_path(@numerator) %> |
+<%= link_to 'Back', numerators_path %>

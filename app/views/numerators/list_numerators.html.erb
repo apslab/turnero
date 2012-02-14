@@ -1,0 +1,21 @@
+<h1>Numerators</h1>
+
+<table>
+  <tr>
+    <th>Current</th>
+    <th>Color</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @numerators.each do |numerator| %>
+  <tr>
+    <td><%= numerator.current %></td>
+    <td><%= numerator.color %></td>
+    <td><%= numerator.name %></td>
+    <td><%= link_to 'Add 1', add_number_numerator_path(numerator) %></td>
+  </tr>
+<% end %>
+</table>
