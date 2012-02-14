@@ -1,6 +1,7 @@
 Turnero::Application.routes.draw do
   resources :numbers
 
+
   get 'list', :action => :list_numerators, :controller => :numerators
   get 'call', :action => :call_numerators, :controller => :numerators
   get 'last', :action => :last_numbers,    :controller => :numerators
