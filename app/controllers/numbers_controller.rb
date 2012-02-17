@@ -2,7 +2,7 @@ class NumbersController < ApplicationController
   # GET /numbers
   # GET /numbers.json
   def index
-    @numbers = Number.all
+    @numbers = Number.find(:all, :order => "numerator_id, number")
 
     respond_to do |format|
       format.html # index.html.erb

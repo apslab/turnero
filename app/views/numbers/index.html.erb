@@ -5,13 +5,13 @@ location.href=location.href
 setInterval('recarga()',10000)
 </script>
 
-<h1>Listing numbers</h1>
+<h1>Lista de numeros entregados</h1>
 
 <table>
   <tr>
-    <th>Numerator</th>
-    <th>Number</th>
-    <th>Called</th>
+    <th>Numerador</th>
+    <th>Numero</th>
+    <th>Llamado</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,13 +22,9 @@ setInterval('recarga()',10000)
     <td><%= number.numerator.name %></td>
     <td><%= number.number %></td>
     <td><%= number.called %></td>
-    <td><%= link_to 'Show', number %></td>
-    <td><%= link_to 'Edit', edit_number_path(number) %></td>
-    <td><%= link_to 'Destroy', number, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Ver', number %></td>
+    <td><%= link_to 'Editar', edit_number_path(number) %></td>
+    <td><%= link_to 'Borrar', number, confirm: 'Esta ud seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Number', new_number_path %>

@@ -1,21 +1,16 @@
-<h1>Numerators</h1>
+<h1 align="center">Numeradores</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
+<table width="100%" border="0">
   <tr>
-    <th>Current</th>
-    <th>Color</th>
-    <th>Name</th>
-    <th></th>
-    <th></th>
+    <th>Utlimo numero</th>
     <th></th>
   </tr>
 
 <% @numerators.each do |numerator| %>
   <tr>
-    <td><%= numerator.current %></td>
-    <td><%= numerator.color %></td>
-    <td><%= numerator.name %></td>
-    <td><%= link_to 'Add 1', add_number_numerator_path(numerator) %></td>
+    <td align="center"><%= numerator.current %></td>
+    <td><%= link_to 'Nuevo numero para ' + numerator.name.to_s , add_number_numerator_path(numerator) %></td>
   </tr>
 <% end %>
 </table>

@@ -2,13 +2,27 @@
 <html>
 <head>
   <title>Turnero</title>
+    <style type="text/css" media="screen">
+      #header {
+        background-image: url("assets/cdp.png");
+        background-repeat: no-repeat;
+        background-position: top left;
+        height: 100px;
+      }
+	</style>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="content">
+    <div id="header">
+    </div>
+  </div>
 
 <%= yield %>
 
+<a href="/">.</a>
 </body>
 </html>

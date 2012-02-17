@@ -5,21 +5,21 @@ location.href=location.href
 setInterval('recarga()',5000)
 </script>
 
-<h1 align="center">called numbers</h1>
+<h1 align="center">ultimos numeros llamados</h1>
 <p id="notice"><%= notice %></p>
 
 <table width="100%" border="0">
   <tr>
     <th></th>
-    <th>Name</th>
-    <th>Last number called</th>
+    <th>Denominacion</th>
+    <th>Ultimo numero</th>
   </tr>
 
 <% @numerators.each do |numerator| %>
   <tr>
     <td align="center"><%= numerator.color %></td>
     <td align="center"><%= numerator.name %></td>
-    <td align="center"><%= numerator.current %></td>
+    <td align="center" font-size="12"><%= numerator.current %></td>
   </tr>
 <% end %>
 </table>

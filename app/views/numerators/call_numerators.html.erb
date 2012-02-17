@@ -1,20 +1,15 @@
-<h1>call numbers</h1>
+<h1 align="center">Llamador</h1>
 <p id="notice"><%= notice %></p>
 
-<table>
+<table width="100%" border="0">
   <tr>
-    <th>Color</th>
     <th>Name</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @numerators.each do |numerator| %>
   <tr>
-    <td><%= numerator.color %></td>
-    <td><%= numerator.name %></td>
-    <td><%= link_to 'call first', call_first_number_numerator_path(numerator) %></td>
+    <td align="center"><%= link_to 'llamar al primero de ' + numerator.name.to_s, call_first_number_numerator_path(numerator) %></td>
   </tr>
 <% end %>
 </table>
