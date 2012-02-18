@@ -2,27 +2,52 @@
 <html>
 <head>
   <title>Turnero</title>
-    <style type="text/css" media="screen">
-      #header {
-        background-image: url("assets/cdp.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 100px;
-      }
-	</style>
-
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+<style>
+#header_left {
+        background-image: url("assets/cdp.png");
+        background-repeat: no-repeat;
+        background-position: top left;
+        width:20%;
+        float:left;
+        height: 98px;
+      }
+
+#header_center {
+        width:60%;	
+	  }
+
+#header_right {
+        background-image: url("assets/cdp.png");
+        background-repeat: no-repeat;
+        background-position: top right;
+        height: 98px;
+        width:20%;
+        float:right;
+      }
+</style>
+
 </head>
 <body>
   <div id="content">
-    <div id="header">
+  <div id="header">
+    <div id="header_left">
+
+    </div>
+    <div id="header_center">
+
+    </div>
+    <div id="header_right">
+
     </div>
   </div>
 
 <%= yield %>
 
-<a href="/">.</a>
+  <br/>
+  <a href="/"><--</a>
+  </div>
 </body>
 </html>

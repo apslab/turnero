@@ -2,15 +2,85 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//h1
-//{
-//background-color:#00ff00;
-//}
-//
-//table
-//{
-//background-color:yellow;
-//}
+#content
+{
+background-color:black;
+color:white;
+}
+
+#header_turnero
+{
+	padding-top:30px;
+	font-size:48px;
+}
+
+#footer_turnero
+{
+	padding-bottom:3px;
+	font-size:12px;
+	width:100%;
+}
+
+#td_turnero
+{
+font-size:36px;
+padding:10px 10px 10px 10px;	
+}
+
+#td_turnero_numero
+{
+font-size:42px;
+padding:25px 15px 25px 15px;	
+}
+
+#td_turnero_puesto
+{
+font-size:42px;
+padding:25px 15px 25px 15px;	
+}
+
+#tr_turnero_green
+{
+background-color:green;
+color:white;
+}
+
+#tr_turnero_red
+{
+background-color:red;
+color:white;
+}
+
+#tr_turnero_blue
+{
+background-color:blue;
+color:white;
+}
+
+#tr_turnero_yellow
+{
+background-color:yellow;
+color:black;
+}
+
+#tr_turnero_white
+{
+background-color:white;
+color:black;
+}
+
+#tr_turnero_black
+{
+background-color:black;
+color:white;
+}
+
+#table_turnero
+{
+background-color:black;
+padding:0px 80px 0px 80px;
+}
+
 //
 //table td
 //{

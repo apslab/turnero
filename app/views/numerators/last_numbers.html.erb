@@ -1,25 +1,27 @@
+<h1 id="header_turnero" align="center">Ultimos numeros llamados</h1>
+<p id="notice"><%= notice %></p>
+
+<table id="table_turnero" width="100%" border="0">
+  <tr>
+    <th>Denominacion</th>
+    <th>Ultimo numero</th>
+    <th>Puesto</th>   
+  </tr>
+
+<% @numerators.each do |numerator| %>
+  <tr id="tr_turnero_<%=numerator.color.to_s%>">
+    <td id="td_turnero" align="center"><%= numerator.name %></td>
+    <td id="td_turnero_numero" align="center"><%= numerator.current %></td>
+    <td id="td_turnero_puesto" align="center"><%= numerator.current %></td>    
+  </tr>
+<% end %>
+</table>
+
+<h3 id="footer_turnero" align="center">Centro de Diagnostico Parque</h3>
+
 <script>
 function recarga(){
 location.href=location.href
 }
-setInterval('recarga()',5000)
+setInterval('recarga()',10000)
 </script>
-
-<h1 align="center">ultimos numeros llamados</h1>
-<p id="notice"><%= notice %></p>
-
-<table width="100%" border="0">
-  <tr>
-    <th></th>
-    <th>Denominacion</th>
-    <th>Ultimo numero</th>
-  </tr>
-
-<% @numerators.each do |numerator| %>
-  <tr>
-    <td align="center"><%= numerator.color %></td>
-    <td align="center"><%= numerator.name %></td>
-    <td align="center" font-size="12"><%= numerator.current %></td>
-  </tr>
-<% end %>
-</table>
