@@ -3,4 +3,5 @@ class Number < ActiveRecord::Base
 
   scope :first_number, where("numbers.called is NULL").order('number')
   scope :last_number_call, where("numbers.called is NOT NULL").order('called desc')
+
 end
