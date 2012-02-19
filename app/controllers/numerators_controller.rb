@@ -20,6 +20,7 @@ class NumeratorsController < ApplicationController
 
   def call_numerators
     @numerators = Numerator.all
+    @position = Position.find(1)
     respond_to do |format|
       format.html 
       format.json { render json: @numerators }
@@ -65,8 +66,11 @@ class NumeratorsController < ApplicationController
   end
 
   def call_first_number
-    @numerator = Numerator.find(params[:id])
+    @numerator = Numerator.find(params[:numerator_id])
+    @position = Position.find(params[:position_id])
+
     @number = @numerator.numbers.first_number.first
+    @number.position_id = @position.id
 
     unless @number.nil?
       @number.called = DateTime.now
@@ -87,7 +91,8 @@ class NumeratorsController < ApplicationController
     @numerator = Numerator.find(params[:id])
     @number = Number.new 
     @number.numerator_id = @numerator.id
-    @number.number = @numerator.current + 1
+    
+    @number.number = @numerator.current.nil? ? 1 : @numerator.current + 1
     @numerator.current = @number.number
     
     @number.save

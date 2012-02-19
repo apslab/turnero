@@ -1,5 +1,8 @@
+<div>
 <h1 align="center">Llamador</h1>
 <p id="notice"><%= notice %></p>
+
+Puesto: <%= @position.name %>
 
 <table width="100%" border="0">
   <tr>
@@ -9,7 +12,10 @@
 
 <% @numerators.each do |numerator| %>
   <tr>
-    <td align="center"><%= link_to 'llamar al primero de ' + numerator.name.to_s, call_first_number_numerator_path(numerator) %></td>
+
+    <td align="center"><%= link_to 'llamar al primero de ' + numerator.name.to_s, numerator_position_call_first_number_path(numerator,@position) %></td>
   </tr>
 <% end %>
 </table>
+
+</div>

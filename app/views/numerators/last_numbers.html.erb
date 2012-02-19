@@ -1,23 +1,19 @@
-<h1 id="header_turnero" align="center">Ultimos numeros llamados</h1>
-<p id="notice"><%= notice %></p>
-
-<table id="table_turnero" width="100%" border="0">
-  <tr>
-    <th>Denominacion</th>
-    <th>Ultimo numero</th>
-    <th>Puesto</th>   
-  </tr>
-
-<% @numerators.each do |numerator| %>
-  <tr id="tr_turnero_<%=numerator.color.to_s%>">
-    <td id="td_turnero" align="center"><%= numerator.name %></td>
-    <td id="td_turnero_numero" align="center"><%= numerator.current %></td>
-    <td id="td_turnero_puesto" align="center"><%= numerator.current %></td>    
-  </tr>
-<% end %>
-</table>
-
-<h3 id="footer_turnero" align="center">Centro de Diagnostico Parque</h3>
+<div style="background-color:black;color:white">
+  <h1 id="header_turnero" align="center">Ultimos numeros llamados</h1>
+  <p id="notice"><%= notice %></p>
+  <div style="float:left;width:110%;">
+    <% @numerators.each do |numerator| %>
+      <div id="div_turnero_line">
+        <div id="div_turnero_left"></div>
+        <div id="div_turnero_name" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_text"><%= numerator.name %></div></div>
+        <div id="div_turnero_current" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number"><%= numerator.current %></div></div>
+        <div id="div_turnero_position" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number"><%= numerator.find_puesto( numerator.current ) %></div></div>
+        <div id="div_turnero_right"></div>
+      </div>
+    <% end %>
+  </div>
+  <div id="div_footer">Centro de Diagnostico Parque</div>
+</div>
 
 <script>
 function recarga(){

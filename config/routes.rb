@@ -1,4 +1,6 @@
 Turnero::Application.routes.draw do
+  resources :positions
+
   resources :numbers
 
 
@@ -9,8 +11,9 @@ Turnero::Application.routes.draw do
   resources :numerators do
     member do 
       get 'add_number', :action => :add_number
-      get 'call_first_number', :action => :call_first_number
-
+    end
+    resources :positions do
+      get 'call_first_number', :action => :call_first_number, :controller => :numerators
     end
   end
 

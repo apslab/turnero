@@ -4,21 +4,140 @@
 
 #content
 {
-background-color:black;
+background-color:white;
+color:black;
+}
+
+#div_turnero_line{
+width: 99%;
+clear:both;
+}
+
+#div_turnero_left{
+width: 10%; 
+height: 60px;
+float:left;
+}
+
+#div_turnero_right{
+width: 10%; 
+height: 60px;
+float:left;
+}
+
+#div_turnero_text{
+padding-top:20px;	
+padding-left:20px;	
+}
+
+#div_turnero_number{
+padding-top:20px;	
+padding-left:80px;	
+}
+
+#div_turnero_name{
+width: 50%;
+height: 60px;
+float:left;
+-moz-border-radius: 20px;
+font-size:42px;
 color:white;
 }
 
+#div_turnero_current{
+width: 10%;
+height: 60px;
+float:left;
+-moz-border-radius: 20px;
+font-size:42px;
+color:white;
+}
+
+#div_turnero_position{
+width: 10%;
+height: 60px;
+float:left;
+-moz-border-radius:20px;
+font-size:42px;
+color:white;
+}
+
+#div_footer
+{
+clear:both;
+width: 100%;
+height: 60px;
+padding:10px 10px 10px 10px;
+}
+
+
+#div_list_line{
+width: 99%;
+clear:both;
+padding: 20px 0px 40px 0px;
+}
+
+#div_list_left{
+width: 10%; 
+height: 60px;
+-moz-border-radius:20px;
+font-size:42px;
+float:left;
+}
+
+#div_list_center_number
+{
+width: 10%; 
+height: 60px;
+-moz-border-radius:20px;
+font-size:42px;
+float:left;	
+}
+
+#div_list_center_link
+{
+width: 60%; 
+height: 60px;
+-moz-border-radius:20px;
+font-size:42px;
+float:left;	
+}
+
+
+#div_list_right
+{
+width: 10%; 
+height: 60px;
+-moz-border-radius:20px;
+font-size:42px;
+float:left;
+}
+
+#div_list_texto
+{
+padding-top:20px;
+padding-left:20px;
+}
+
+#div_list_number
+{
+padding-top:20px;
+padding-left:20px;
+}
+
+
 #header_turnero
 {
-	padding-top:30px;
-	font-size:48px;
+padding-top:30px;
+font-size:48px;
+color:white;
 }
 
 #footer_turnero
 {
-	padding-bottom:3px;
-	font-size:12px;
-	width:100%;
+padding-bottom:3px;
+font-size:12px;
+width:100%;
 }
 
 #td_turnero
@@ -39,50 +158,8 @@ font-size:42px;
 padding:25px 15px 25px 15px;	
 }
 
-#tr_turnero_green
-{
-background-color:green;
-color:white;
-}
-
-#tr_turnero_red
-{
-background-color:red;
-color:white;
-}
-
-#tr_turnero_blue
-{
-background-color:blue;
-color:white;
-}
-
-#tr_turnero_yellow
-{
-background-color:yellow;
-color:black;
-}
-
-#tr_turnero_white
-{
-background-color:white;
-color:black;
-}
-
-#tr_turnero_black
-{
-background-color:black;
-color:white;
-}
-
 #table_turnero
 {
 background-color:black;
 padding:0px 80px 0px 80px;
 }
-
-//
-//table td
-//{
-//font-size:24px;	
-//}

@@ -11,6 +11,7 @@ setInterval('recarga()',10000)
   <tr>
     <th>Numerador</th>
     <th>Numero</th>
+    <th>puesto</th>
     <th>Llamado</th>
     <th></th>
     <th></th>
@@ -21,6 +22,7 @@ setInterval('recarga()',10000)
   <tr>
     <td><%= number.numerator.name %></td>
     <td><%= number.number %></td>
+    <td><%= number.position.try(:name) %></td>
     <td><%= number.called %></td>
     <td><%= link_to 'Ver', number %></td>
     <td><%= link_to 'Editar', edit_number_path(number) %></td>

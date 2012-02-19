@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120213184013) do
+ActiveRecord::Schema.define(:version => 20120218215941) do
 
   create_table "numbers", :force => true do |t|
     t.integer  "numerator_id"
@@ -19,12 +19,20 @@ ActiveRecord::Schema.define(:version => 20120213184013) do
     t.datetime "called"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "position_id"
   end
 
   create_table "numerators", :force => true do |t|
     t.integer  "init"
     t.integer  "current"
     t.string   "color"
+    t.string   "name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "backgroundcolor"
+  end
+
+  create_table "positions", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

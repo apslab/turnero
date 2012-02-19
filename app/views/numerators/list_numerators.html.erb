@@ -1,16 +1,14 @@
-<h1 align="center">Numeradores</h1>
-<p id="notice"><%= notice %></p>
-
-<table width="100%" border="0">
-  <tr>
-    <th>Utlimo numero</th>
-    <th></th>
-  </tr>
-
-<% @numerators.each do |numerator| %>
-  <tr>
-    <td align="center"><%= numerator.current %></td>
-    <td><%= link_to 'Nuevo numero para ' + numerator.name.to_s , add_number_numerator_path(numerator) %></td>
-  </tr>
-<% end %>
-</table>
+<div style="background-color:black;color:white">
+  <h1 id="header_turnero" align="center">Numeradores</h1>
+  <p id="notice"><%= notice %></p>
+  <div style="float:left;width:110%;">
+    <% @numerators.each do |numerator| %>
+      <div id="div_list_line">
+        <div id="div_list_left"></div>
+        <div id="div_list_center_link" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_list_texto"><%= link_to 'numero ' + numerator.name.to_s + ' ' + numerator.current.to_s , add_number_numerator_path(numerator) %></div></div>
+        <div id="div_list_right"></div>        
+      </div>
+    <% end %>
+  </div>
+  <div id="div_footer">Centro de Diagnostico Parque</div>
+</div>
