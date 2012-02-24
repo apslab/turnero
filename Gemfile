@@ -11,7 +11,7 @@ end
 group :production do 
 	gem 'pg'
 end
-
+gem 'prawn'
 gem 'heroku'
 
 # Gems used only for assets and not required

@@ -1,0 +1,71 @@
+<html>
+<body>
+<div style="width: 40%;height: 20px;">
+    <div style="width: 10%;height: 20px;font-size:12px;float:left;"><img src="../app/assets/images/cdp.png" alt="cdp" width="30" height="30" /></div>
+    <div align=center style="width: 60%;height: 20px;font-size:12px;float:left;">Centro de Diagnostico Parque</div>
+    <div style="width: 10%;height: 20px;font-size:12px;float:left;"><img src="../app/assets/images/cdp.png" alt="cdp" width="30" height="30" /></div>
+</div>
+
+<div style="width: 40%;height: 20px;">
+    <div style="width: 10%;height: 60px;font-size:24px;float:left;"></div>
+    <div align=center style="width: 60%;height: 60px;font-size:24px;float:left;">Estudio SIN Turnos</div>
+    <div style="width: 10%;height: 60px;font-size:24px;float:left;"></div>
+</div>
+
+<div style="width: 40%;height: 20px;">
+  <div align=center style="width: 80%;height: 60px;font-size:64px;float:left;">32</div>
+</div>
+
+<div style="width: 40%;height: 20px;">
+  <div align=center style="width: 80%;height: 60px;font-size:12px;float:left;">Por favor aguarde a ser atendido.</div>
+</div>
+
+<div style="width: 40%;height: 20px;">
+  <div align=center style="width: 80%;height: 60px;font-size:12px;float:left;">Muchas gracias.</div>
+</div>
+
+</body>
+</html>
+
+<script>
+function printDocument(documentId) {
+
+    //Wait until PDF is ready to print    
+    if (typeof document.getElementById(documentId).print == 'undefined') {
+
+        setTimeout(function(){printDocument(documentId);}, 1000);
+
+    } else {
+
+        var x = document.getElementById(documentId);
+        x.print();
+    }
+}
+//printDocument('number_turnero')
+
+function Print() {
+  //alert ("que hecemos ahora!")
+  //if (document.layers)
+  //{
+    window.print();
+  //}
+  //else if (document.all)
+  //{
+    //WebBrowser1.ExecWB(6, 6);
+    //use 6, 1 to prompt the print dialog or 6, 6 to omit it
+    //some websites also indicate that 6,2 should be used to omit the box
+    //WebBrowser1.outerHTML = "";
+  //}
+}
+//Print()
+
+</script>
+<!--
+<object ID="WebBrowser1" WIDTH="0" HEIGHT="0"
+CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2">
+</object>
+-->
+<!--
+Type about:config at Firefox’s location bar and hit Enter.
+Right click at anywhere on the page and select New > Boolean
+Enter the preference name as print.always_print_silent and click OK. -->

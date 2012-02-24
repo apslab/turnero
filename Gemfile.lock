@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     actionmailer (3.2.1)
       actionpack (= 3.2.1)
       mail (~> 2.4.0)
@@ -61,8 +62,14 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    pdf-reader (1.0.0)
+      Ascii85 (~> 1.0.0)
+      ruby-rc4
     pg (0.12.2)
     polyglot (0.3.3)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -90,6 +97,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    ruby-rc4 (0.1.4)
     rubyzip (0.9.5)
     sass (3.1.15)
     sass-rails (3.2.4)
@@ -107,6 +115,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.31)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -120,6 +129,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   pg
+  prawn
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sqlite3

@@ -5,10 +5,58 @@
     <% @numerators.each do |numerator| %>
       <div id="div_list_line">
         <div id="div_list_left"></div>
-        <div id="div_list_center_link" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_list_texto"><%= link_to 'numero ' + numerator.name.to_s + ' ' + numerator.current.to_s , add_number_numerator_path(numerator) %></div></div>
-        <div id="div_list_right"></div>        
+        <div id="div_list_center_link" align="center" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_list_texto"><%= link_to numerator.name.to_s + ' ' + numerator.current.to_s , add_number_numerator_path(numerator) %></div></div>
+        <div id="div_list_right"></div>
       </div>
     <% end %>
   </div>
   <div id="div_footer">Centro de Diagnostico Parque</div>
+  <a href="#" onclick="printIt(document.getElementById('impreso').innerHTML); return false">Print</a>
 </div>
+
+<div id='impreso' style='display: none;width: 100%'>
+<div style="width: 55%;height: 20px;">
+    <div style="width: 10%;height: 20px;font-size:12px;float:left;"><img src="/assets/cdp.png" alt="cdp" width="30" height="30" /></div>
+    <div align=center style="width: 60%;height: 20px;font-size:12px;float:left;">Centro de Diagnostico Parque</div>
+    <div style="width: 10%;height: 20px;font-size:12px;float:left;"><img src="/assets/cdp.png" alt="cdp" width="30" height="30" /></div>
+</div>
+<div style="width: 55%;height: 20px;">
+    <div style="width: 10%;height: 60px;font-size:24px;float:left;"></div>
+    <div align=center style="width: 60%;height: 60px;font-size:24px;float:left;"><%= @number.numerator.name.to_s %></div>
+    <div style="width: 10%;height: 60px;font-size:24px;float:left;"></div>
+</div>
+<div style="width: 55%;height: 80px;">
+  <div align=center style="width: 80%;height: 65px;font-size:64px;float:left;"><%= @number.number.to_s %></div>
+</div>
+<div style="width: 55%;height:20px;float:left"></div>
+
+<div style="width: 55%;height:20px;">
+  <div align=center style="width: 80%;height: 20px;font-size:12px;float:left;">Por favor aguarde a ser atendido.</div>
+</div>
+<div style="width: 55%;height: 20px;">
+  <div align=center style="width: 80%;height: 20px;font-size:12px;float:left;">Muchas gracias.</div>
+</div>
+<div style="width: 55%;height: 20px;">
+  <div align=center style="width: 80%;height: 20px;font-size:12px;float:left;"><%= @number.created_at.to_s %></div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+  var win=null;
+  function printIt(printThis)
+  {
+    win = window.open();
+    self.focus();
+    win.document.open();
+    win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
+    win.document.write('body, td { font-family: Verdana; font-size: 10pt;}');
+    win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
+    win.document.write(printThis);
+    win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
+    win.document.close();
+    win.print();
+    win.close();
+  }
+//printIt(document.getElementById('impreso').innerHTML)
+</script>
