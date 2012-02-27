@@ -1,16 +1,16 @@
 <div style="background-color:black;color:white">
   <h1 id="header_turnero" align="center">Numeradores</h1>
   <p id="notice"><%= notice %></p>
-  <div style="float:left;width:110%;">
     <% @numerators.each do |numerator| %>
       <div id="div_list_line">
         <div id="div_list_left"></div>
-        <div id="div_list_center_link" align="center" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_list_texto"><%= link_to numerator.name.to_s + ' ' + numerator.current.to_s , add_number_numerator_path(numerator) %></div></div>
+        <button id="button_list" name="somebutton" type="button" onclick="location.href='/numerators/<%=numerator.id.to_s%>/add_number'" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;">
+          <div id="div_list_center_link"><%= numerator.name.to_s + ' ' + numerator.current.to_s %></div>
+        </button>
         <div id="div_list_right"></div>
       </div>
     <% end %>
-  </div>
-  <div id="div_footer">Centro de Diagnostico Parque</div>
+<div id="div_footer" align="center">Centro de Diagnostico Parque</div>
   <a href="#" onclick="printIt(document.getElementById('impreso').innerHTML); return false">Print</a>
 </div>
 
@@ -58,5 +58,6 @@
     win.print();
     win.close();
   }
+}
 //printIt(document.getElementById('impreso').innerHTML)
 </script>

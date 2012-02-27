@@ -1,19 +1,27 @@
+
 <div>
 <h1 align="center">Llamador</h1>
 <p id="notice"><%= notice %></p>
 
-Puesto: <%= @position.name %>
+Puesto:
+
+<%= select_tag('position', options_for_select(Position.all.map { |pos| [pos.name, pos.id] }), :onchange => 'asignValue;', :title => 'cambio de puesto') %>
 
 <table width="100%" border="0">
   <tr>
     <th>Name</th>
-    <th>cantidad en espera</th>
-    <th>tiempo esperando</th>
+    <th>cantidad de numeros en espera</th>
+    <th>tiempo esperando</th>    
+    <th>demora estimada</th>
   </tr>
 
 <% @numerators.each do |numerator| %>
   <tr>
-    <td align="center"><%= link_to 'primero de ' + numerator.name.to_s , numerator_position_call_first_number_path(numerator,@position) %></td>
+    <td>
+        <button id="button_call" name="somebutton" type="button" onclick="asignValue(<%=numerator.id.to_s%>);" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;width:100%">
+          <div id="div_call"><%= numerator.name.to_s %></div>
+        </button>
+    </td>
     <td align="center"><%= numerator.current.to_s %></td>
     <td align="center"><%= numerator.created_at.to_datetime.to_s %></td>
     <td align="center"><%= (DateTime.now - numerator.created_at.to_datetime).to_f %></td>
@@ -22,3 +30,13 @@ Puesto: <%= @position.name %>
 </table>
 
 </div>
+
+<script type="text/javascript">
+
+
+function asignValue(numerator)
+{
+var val=document.getElementById('position').value;
+location.href='/numerators/' + numerator + '/positions/' + val + '/call_first_number';
+}
+</script>

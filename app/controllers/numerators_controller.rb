@@ -23,10 +23,13 @@ class NumeratorsController < ApplicationController
 
   def call_numerators
     @numerators = Numerator.all
-    @position = Position.find(1)
+    #@position = Position.find(1)
     @numerators.each do |item|
-      item.current = item.numbers.first_number.count
-      item.created_at = item.numbers.first_number.first.created_at
+        item.current = item.numbers.first_number.count
+        number = item.numbers.first_number.first
+        if not number.nil?
+          item.created_at = number.created_at
+        end
     end
     respond_to do |format|
       format.html
@@ -78,14 +81,15 @@ class NumeratorsController < ApplicationController
     @position = Position.find(params[:position_id])
 
     @number = @numerator.numbers.first_number.first
-    @number.position_id = @position.id
 
     unless @number.nil?
+      @number.position_id = @position.id
       @number.called = DateTime.now
 
       respond_to do |format|
         if @number.save
-          format.html { redirect_to call_url, notice: 'llamando al numero ' + @number.number.to_s + ' del ' + @numerator.name.to_s }
+          format.html { redirect_to call_url, notice: 'llamando al numero ' + @number.number.to_s + 
+            ' del ' + @numerator.name.to_s + ' al puesto ' + @position.name}
         end
       end
     else

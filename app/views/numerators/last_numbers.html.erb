@@ -6,13 +6,14 @@
       <div id="div_turnero_line">
         <div id="div_turnero_left"></div>
         <div id="div_turnero_name" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_text"><%= numerator.name %></div></div>
-        <div id="div_turnero_current" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number"><%= numerator.current %></div></div>
-        <div id="div_turnero_position" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number"><%= numerator.find_puesto( numerator.current ) %></div></div>
+        <div id="div_turnero_current" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number" align="rigth"><%= numerator.current %></div></div>
+        <div id="div_turnero_position" style="background-color:<%=numerator.backgroundcolor.to_s%>;color:<%=numerator.color.to_s%>;"><div id="div_turnero_number" align="center"><%= numerator.find_puesto( numerator.current ) %></div></div>
+
         <div id="div_turnero_right"></div>
       </div>
     <% end %>
   </div>
-  <div id="div_footer">Centro de Diagnostico Parque</div>
+  <div id="div_footer" align="center">Centro de Diagnostico Parque</div>
 </div>
 
 <script>

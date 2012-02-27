@@ -5,7 +5,7 @@ class Numerator < ActiveRecord::Base
   	if number.nil?
   		return ''
   	else
-  		position = self.numbers.select("number = " + number.to_s).first.position
+  		position = self.numbers.where("number = " + number.to_s).first.position
   		
   		if position.nil?
   			return 'x'
