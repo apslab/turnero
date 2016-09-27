@@ -3,11 +3,13 @@
 one:
   init: 1
   current: 1
-  color: MyString
-  name: MyString
+  color: yellow
+  backgroundcolor: black
+  name: laboratory
 
 two:
   init: 1
   current: 1
-  color: MyString
-  name: MyString
+  color: green
+  backgroundcolor: black
+  name: medical consultation

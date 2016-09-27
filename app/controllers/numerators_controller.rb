@@ -16,7 +16,7 @@ class NumeratorsController < ApplicationController
     @numerators = Numerator.all
     @number = Number.last
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @numerators }
     end
   end
@@ -44,7 +44,7 @@ class NumeratorsController < ApplicationController
       item.current = item.numbers.last_number_call.first.try(:number)
     end
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @numerators }
     end
   end
@@ -88,7 +88,7 @@ class NumeratorsController < ApplicationController
 
       respond_to do |format|
         if @number.save
-          format.html { redirect_to call_url, notice: 'llamando al numero ' + @number.number.to_s + 
+          format.html { redirect_to call_url, notice: 'llamando al numero ' + @number.number.to_s +
             ' del ' + @numerator.name.to_s + ' al puesto ' + @position.name}
         end
       end
@@ -134,7 +134,7 @@ class NumeratorsController < ApplicationController
        pdf.image empresa, :at => [-10,720], :width => 25
        pdf.image empresa, :at => [210,720], :width => 25
 
-       pdf.draw_text "Centro de Diagnostico Parque", :at => [17,700], :size => 14
+       pdf.draw_text "", :at => [17,700], :size => 14
        pdf.draw_text number.numerator.name.to_s, :at => [1,650], :size => 24, :style => :bold
        pdf.line_width = 1
        pdf.bounding_box [-10, 640], :width => 245, :height => 100 do

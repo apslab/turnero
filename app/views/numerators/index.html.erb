@@ -5,7 +5,7 @@
     <th>Init</th>
     <th>Current</th>
     <th>Color</th>
-    <th>Color de fondo</th>    
+    <th>Color de fondo</th>
     <th>Name</th>
     <th></th>
     <th></th>
@@ -17,11 +17,12 @@
     <td><%= numerator.init %></td>
     <td><%= numerator.current %></td>
     <td><%= numerator.color %></td>
-    <td><%= numerator.backgroundcolor %></td>    
+    <td><%= numerator.backgroundcolor %></td>
     <td><%= numerator.name %></td>
     <td><%= link_to 'Ver', numerator %></td>
     <td><%= link_to 'Editar', edit_numerator_path(numerator) %></td>
     <td><%= link_to 'Borrar', numerator, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= button_to "delete", numerator, :method => "delete" %></td>
   </tr>
 <% end %>
 </table>
